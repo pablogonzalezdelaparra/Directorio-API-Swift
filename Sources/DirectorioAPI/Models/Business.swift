@@ -22,29 +22,21 @@ public struct BusinessData: Codable {
 }
 
 public struct Business: Codable, Identifiable, Hashable, Sendable {
-    
-    public struct Schedule: Codable, Hashable, Sendable {
-        public let day: String
-        public let open: String
-        public let close: String
-    }
-    
     public let _id: String
     public var id: String { _id }
-
-    public let title: String
-    public let type: String
-    public let description: String
-    public let address: String
-    public let schedule: [Schedule]
     
-    public init(_id: String, title: String, type: String, description: String, address: String, schedule: [Schedule]) {
+    public let symbol: String
+    public let name: String
+    public let description: String?
+    public let rating: Double
+    public let ratingChange: Double
+    
+    public init(_id: String, symbol: String, name: String, description: String?, rating: Double, ratingChange: Double) {
         self._id = _id
-        self.title = title
-        self.type = type
+        self.symbol = symbol
+        self.name = name
         self.description = description
-        self.address = address
-        self.schedule = schedule
+        self.rating = rating
+        self.ratingChange = ratingChange
     }
 }
-

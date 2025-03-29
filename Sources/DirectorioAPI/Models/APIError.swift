@@ -20,7 +20,8 @@ public enum APIError: CustomNSError {
             return 0
         case .invalidResponseType:
             return 1
-        case .httpStatusCodeFailed: return 2
+        case .httpStatusCodeFailed:
+            return 2
         }
     }
     

@@ -17,10 +17,10 @@ struct DirectorioAPIExec {
     static func main() async {
         do {
             let businesses = try await directorioAPI.getBusinesses()
-            print(businesses)
+            // print(businesses)
             
-            let search = try await directorioAPI.searchBusinessesByTitle(title: "Los Pastssores")
-            print(search)
+            let search = try await directorioAPI.searchBusinessesByTitle(name: "Bolibar")
+            // print(search)
         } catch {
             print(error.localizedDescription)
         }

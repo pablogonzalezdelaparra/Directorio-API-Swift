@@ -32,13 +32,13 @@ public struct DirectorioAPI: Sendable {
         return response.data?.businesses ?? []
     }
     
-    public func searchBusinessesByTitle(title: String) async throws -> [Business] {
-        guard var urlComponents =  URLComponents(string: "\(baseURL)/business/searchBusinessesByTitle") else {
+    public func searchBusinessesByTitle(name: String) async throws -> [Business] {
+        guard var urlComponents =  URLComponents(string: "\(baseURL)/business/searchBusinessesByName") else {
             throw APIError.invalidURL
         }
         
         urlComponents.queryItems = [
-            .init(name: "title", value: title)
+            .init(name: "name", value: name)
         ]
         
         guard let url = urlComponents.url else {
